@@ -1,29 +1,5 @@
 schema: '2.0'
 stages:
-  preprocess:
-    cmd: python pipelines/preprocess.py
-    deps:
-    - path: data/raw/u.data
-      hash: md5
-      md5: 6e47046882bad158b0efbb84cd5cb987
-      size: 1979173
-    - path: data/raw/u.item
-      hash: md5
-      md5: c9e7f390115d79079537301d5204f3f7
-      size: 236344
-    - path: pipelines/preprocess.py
-      hash: md5
-      md5: 53f8b8727740afd385116b1c1023e6d1
-      size: 1116
-    outs:
-    - path: data/processed/ratings.csv
-      hash: md5
-      md5: f2c2abd9bafa5d744822af506f1f06e4
-      size: 4504550
-    - path: data/processed/user_item_matrix.csv
-      hash: md5
-      md5: f613ffc299c2e6ef18960506d827f358
-      size: 1914407
   train:
     cmd: python pipelines/train_model.py
     deps:

@@ -8,8 +8,8 @@ venv/
 env/
 
 # DVC files and cache
-*.dvc
-.dvc/
+#*.dvc
+#.dvc/
 
 # Ignore raw and processed data, models (tracked by DVC)
 data/raw/
@@ -27,3 +27,4 @@ models/
 
 # VS Code settings folder
 .vscode/
+/data

@@ -1,0 +1,18 @@
+stages:
+  preprocess:
+    cmd: python pipelines/preprocess.py
+    deps:
+      - data/raw/u.data
+      - data/raw/u.item
+      - pipelines/preprocess.py
+    outs:
+      - data/processed/ratings.csv
+      - data/processed/user_item_matrix.csv
+
+  train:
+    cmd: python pipelines/train_model.py
+    deps:
+      - data/processed/ratings.csv
+      - pipelines/train_model.py
+    outs:
+      - models/svd_model.pkl

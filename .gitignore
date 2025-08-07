@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment folders
+venv/
+env/
+
+# DVC files and cache
+*.dvc
+.dvc/
+
+# Ignore raw and processed data, models (tracked by DVC)
+data/raw/
+data/processed/
+models/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python test cache
+.pytest_cache/
+
+# Logs
+*.log
+
+# VS Code settings folder
+.vscode/

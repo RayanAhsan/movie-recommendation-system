@@ -62,7 +62,7 @@ This project is a sophisticated, production-ready **Movie Recommendation System*
 
 ---
 
-## Why This Project Stands Out
+## Why I am really proud of this project
 
 - **Production-Grade MLOps:**  
   Not just a model—this project covers the full ML lifecycle, including deployment, monitoring, and scalability.
@@ -107,3 +107,4 @@ This project is licensed under the MIT License.
 ## Contact
 
 For questions or collaboration, please reach out via [GitHub Issues](https://github.com/RayanAhsan/movie-recommendation-system/issues).
+

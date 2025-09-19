@@ -1,22 +1,21 @@
-# Use official Python image as base
 FROM python:3.12-slim
 
-# Set working directory inside the container
 WORKDIR /app
 
-# Copy requirements.txt and install dependencies
-COPY requirements.txt .
+# Install system deps including git for dvc (if you still want to use dvc commands inside container)
+RUN apt-get update && apt-get install -y build-essential gcc git curl \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install -y build-essential gcc
+# Copy requirements and install python deps
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the app code and model files
-COPY app/ ./app/
-COPY models/ ./models/
-COPY data/processed/ ./data/processed/
+# Optionally install dvc if you still want it inside container (can be removed if unused)
+RUN pip install --no-cache-dir "dvc[gdrive]"
 
-# Expose port for FastAPI
+# Copy all your code, models, and data folders
+COPY . ./
+
 EXPOSE 8000
 
-# Command to run FastAPI app using uvicorn
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
